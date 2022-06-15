@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="alert-info clo-3 m-auto">
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }} <a href=" {% url 'contact' %}">Voir contact</a></li>
+  
+      {% endfor %}
+    </ul>
+    {% endif %}
+  
+  </div>
+  
+  <div class="container">
+    <h5 class="mt-2">{{user.username}},[*accesClients*]</h5>
+    <h1><img src="" />Gestion de contacts</h1>
+  
+    <form method="POST">
+      {% csrf_token %}
+      <h4>Enregistrez vos coordonnées:</h4>
+     
+    <table>
+      <tr>
+       <td>{{ contact_form.as_table }}</td>
+      </tr>
+    </table>
+    <input style="margin-top: 7px;" type="submit" class="button" name="access" value="enregister" />
+    </form>
+    
+    <h5>
+      <ul>
+        <li style="margin-top: 12px;"><a href=" {% url 'contact' %}">Lister vos contacts</a></li>
+      </ul>
+    </h5>
+    </body>
+    </html>
+  </div>
+    
+{% endblock %}
+    

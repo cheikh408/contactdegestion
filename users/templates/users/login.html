@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+  <div class="container-fluid" style="margin-top: 30px">
+    <div class="row-fluid">
+      <div class="well" style="width: 320px; margin-left: auto; margin-right: auto">
+        <div class="row-fluid">
+          <div>
+            <h3 style="margin: 0 0 20px;">Connectez - Enregistrez vos contacts</h3>
+          </div>
+          <div class="alert-danger m-auto ">
+            <p style="text-align:center;">{{message}}</p>
+        </div>
+    
+        </div>
+        <!-- /row fluid -->
+
+        <div class="row-fluid">
+          
+            <form  role="form" method="post">
+                  {% csrf_token %}
+              <input type="hidden" name="next" value="" />
+
+              <div id="div_id_username" class="clearfix control-group ">
+                <div class="form-group">
+                  <label for="id_username">Nom d’utilisateur:</label>
+                  <input type="text" name="username" maxlength="100"
+                      autocapitalize="off"
+                      autocorrect="off" class="form-control textinput textInput"
+                      id="id_username" required autofocus
+                      >
+                  
+                </div>
+              </div>
+
+              <div id="div_id_password" class="clearfix control-group ">
+                <div class="form-group">
+                  <label for="id_password">Mot de passe:</label>
+                  <input type="password" name="password" maxlength="100" autocapitalize="off" autocorrect="off" class="form-control textinput textInput" id="id_password" required>
+                  
+                </div>
+              </div>
+
+              <br>
+
+              <div class="form-actions-no-box">
+                <input type="submit" name="submit" value="Login" class="btn btn-primary form-control" id="submit-id-submit">
+              </div>
+
+
+            </form>
+            
+          </div>
+        </div><!-- /.row-fluid -->
+      </div><!--/.well-->
+    </div><!-- /.row-fluid -->
+  </div><!-- /.container-fluid -->
+
+{% endblock %}
+    

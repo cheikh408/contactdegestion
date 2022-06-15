@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+<div class="alert alert-danger" role="alert">
+  Etes-vous sur de vouloir supprimer {{ contact }}
+</div>
+  <div class="d-grid gap-2 col-4 mx-auto mt-4">
+   <button class="btn btn-success " type="submit">oui,je suis sur</button>
+    <a href="{% url 'contact' %}"><button class="btn btn-secondary " type="button">Non, revenir à la page précédente</button></a>
+  </div>
+</form>
+    
+{% endblock %}
+    

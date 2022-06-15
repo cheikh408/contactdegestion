@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .container a {
+    text-decoration: none;
+  }
+</style>
+
+{% if contacts %}
+<div class="container col-6 m-auto mt-4 ">
+  {% for contact in contacts %}
+  <a href="{{ contact.get_absolute_url }}">
+    <ul class="container">
+      <li class="list-group-item ">
+        <h6>{{ contact.nom }} {{ contact.prenom }}</h6>
+      </li>
+    </ul>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+
+<li class="container">
+  <a href="{% url 'index' %}"> Ajouter de nouveaux contact</a>
+</li>
+<div class="container col-6 m-auto mt-4">
+  <ul class="card card-header">
+    <h5>Contact vide</h5>
+  </ul>
+</div>
+{% endif %} {% endblock %}

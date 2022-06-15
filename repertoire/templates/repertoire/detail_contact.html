@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <a href="{% url 'index' %}">
+     <h2>Contact</h2>
+  </a><br>
+ 
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Mobile</th>
+        <th>email</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ contact.nom }}</td>
+        <td>{{ contact.prenom }}</td>
+        <td>{{ contact.telephone }}</td>
+        <td>{{ contact.mail }}</td>
+        <td>{{ contact.date_enregistrement }}</td>
+      </tr>
+      
+    </tbody>
+   
+    <a href="{% url 'contact_edit' contact.id %}">
+      <button type="button" class="btn btn-outline-success">Modifier</button>
+    </a>
+   <a href="{% url 'contact_delete' contact.id %}">
+    <button type="button" class="btn btn-outline-danger">Supprimer</button>
+    </a>
+  
+   
+    {% endblock %}
+  </table>
+</div>
