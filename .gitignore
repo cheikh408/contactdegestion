@@ -1,7 +1,5 @@
-# Django #
 db.sqlite3
 __pycache__
-env/
+contactdegestion/env/
 .env
 .DS_Store
-media
