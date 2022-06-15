@@ -1,5 +1,6 @@
+env/bin/
 db.sqlite3
 __pycache__
-contactdegestion/env/
+
 .env
 .DS_Store
