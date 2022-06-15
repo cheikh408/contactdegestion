@@ -1,6 +1,5 @@
-env/bin/
+env/
 db.sqlite3
 __pycache__
-
 .env
 .DS_Store
