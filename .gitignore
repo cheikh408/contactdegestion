@@ -1,10 +1,8 @@
 # Django #
-*.log
-*.pot
-*.pyc
+
 __pycache__
+env/
 db.sqlite3
 media
-env
 .env
 .DS_Store
